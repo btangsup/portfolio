@@ -1,0 +1,70 @@
+// FONTS // 
+$heading-font: 'Lalezar', cursive;
+$body-font: 'Tajawal', sans-serif;
+
+// COLOURS //
+$primary-color: #052540;
+$secondary-color: #1c75bb;
+$tertiary-color: #EEEDE5;
+$quad-color: #F2C039;
+
+// LIGHT THEME STYLES //
+:root {
+    --primaryColor: #052540;
+    --secondaryColor: #1c75bb;
+    --tertiaryColor: #052540;
+    --navBkgColor: #1c75bb;
+    --navColor: #EEEDE5;
+    --fontColor: #052540;
+    --buttonColor: #EEEDE5;
+    --highlight: #F2C039;
+    --portfolioSection: #FFF;
+    --toggle: #FFF;
+}
+
+// DARK THEME STYLES //
+
+[data-theme="dark"] {
+    --primaryColor: #EEEDE5;
+    --secondaryColor: #EEEDE5;
+    --tertiaryColor: #F2C039;
+    --navBkgColor: #052540;
+    --navColor: #EEEDE5;
+    --fontColor: #EEEDE5;
+    --buttonColor: #052540;
+    --highlight: #052540;
+    --portfolioSection: #052540;
+    --toggle: #F2C039;
+}
+
+// MIXINS // 
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin mq-small-desktop {
+    @media (max-width:1200px) {
+        @content
+    }
+};
+
+@mixin mq-tablet {
+    @media (max-width:950px) {
+        @content
+    }
+};
+
+@mixin mq-small-tablet {
+    @media (max-width:800px) {
+        @content
+    }
+};
+
+@mixin mq-phone {
+    @media (max-width:550px) {
+        @content
+    }
+};

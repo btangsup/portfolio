@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brandon Tang Front End Developer Portfolio">
+    <meta name="keywords" content="Brandon Tang, Portfolio, Web Dev, Front-end developer, Client-Work">
+    <link rel="icon" href="./assets/favicon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lalezar|Tajawal:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Brandon Tang | Front End Developer</title>
+</head>
+
+<body>
+    <a href="#header" class="skip-link">Skip to home section.</a>
+    <a href="#about" class="skip-link">Skip to about section.</a>
+    <a href="#projects" class="skip-link">Skip to projects section.</a>
+    <a href="#contact" class="skip-link">Skip to contact section.</a>
+    <a href="#header" class="scrollToTop" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+        <label class="visuallyHidden">Back to top</label>
+    </a>
+    <div class="navigation">
+        <div class="navigation__container wrapper">
+            <div>
+                <a href="#header" class="navigation__logo">
+                    <h2>BT.</h2>
+                </a>
+            </div>
+            <div class="navigation__toggle-theme-container">
+                <i class="fas fa-sun navigation__icon" aria-hidden="true"></i>
+                <input type="checkbox" class="navigation__theme-toggle" name="darkLightToggle" id="darkLightToggle">
+                <label class="navigation__theme-toggle" for="darkLightToggle"
+                    aria-label="checkbox to toggle between dark and light theme"></label>
+                <i class="fas fa-moon navigation__icon" aria-hidden="true"></i>
+            </div>
+            <nav class="navigation__desktop">
+                <ul class="navigation__main">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div id="navigation" class="hidden">
+                <nav>
+                    <ul class="navigation__main">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="navigation__hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <header id="header" class="lightHero">
+        <div class="header">
+            <h1 class="header__title">Brandon Tang</h1>
+            <a href="./assets/Brandon-Tang-Resume2020.pdf" class="header__resume-button" target="_blank">View Resume</a>
+            <div class="header__social">
+                <ul>
+                    <li><a href="https://github.com/btangsup" target="_blank"><i class="fab fa-github-square"
+                                title="Github" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/BTangsupp" target="_blank"><i class="fab fa-twitter-square"
+                                title="Twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/brandonerictang/" target="_blank"><i
+                                class="fab fa-linkedin" title="LinkedIn" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <a href="#about" class="header__arrow-down">
+                <i class="fas fa-chevron-down down" aria-hidden="true"></i>
+            </a>
+        </div>
+    </header>
+    <section class="about" id="about">
+        <h2 class="about__title">About Me</h2>
+        <div class="about__content wrapper">
+            <div class="about__headshot-container aos-init aos-animate" data-aos="fade">
+                <img src="./assets/BTang-Headshot.jpg" class="about__headshot" alt="Photography shot of Brandon Tang">
+            </div>
+            <div class="about__text aos-init aos-animate" data-aos="fade">
+                <div class="about__string-typing-container">
+                    <p>I'm <span class="about__string-typing"></span></p>
+                </div>
+                <p>Hey there, name's <span class="about__highlight">Brandon Tang</span>! I am passionate about developing
+                    websites and web apps that provide users with a great experience.</p>
+                <p>Obtaining a degree in <span class="about__highlight">graphic design and print production</span> at <span
+                        class="about__highlight">Ryerson University</span> along with completing a <span class="about__highlight">Web
+                        Development Bootcamp</span> at <span class="about__highlight">Juno College of Technology.</span> I have
+                    developed a keen sense of <span class="about__highlight">design</span> and I'm up to the challenge of <span
+                        class="about__highlight">solving</span> any coding problem.</p>
+                <p>Outside of coding, I love to stay active and engage in sports such as snowboarding and basketball, or
+                    you can find me immersing myself in T.V shows or video games!</p>
+                <p class="about__konami">P.S. input a konami code to see my dog!</p>
+            </div>
+        </div>
+        
+    </section>
+    <section class="skills" id="skills">
+            <h2 class="skills__title">skills</h2>
+            <ul class="skills__list">
+                <li class="aos-init aos-animate" data-aos="fade" data-aos-delay="50">
+                    <i class="fab fa-html5" aria-hidden="true"></i>
+                    <p>html</p>
+                </li>
+                <li class="aos-init aos-animate" data-aos="fade" data-aos-delay="100">
+                    <i class="fab fa-css3-alt" aria-hidden="true"></i>
+                    <p>css</p>
+                </li>
+                <li class="aos-init aos-animate" data-aos="fade" data-aos-delay="150">
+                    <i class="fab fa-js" aria-hidden="true"></i>
+                    <p>javascript</p>
+                </li>
+                <li class="aos-init aos-animate" data-aos="fade" data-aos-delay="150">
+                    <i class="fab fa-react" aria-hidden="true"></i>
+                    <p>react</p>
+                </li>
+                <li class="aos-init aos-animate" data-aos="fade" data-aos-delay="200">
+                    <i class="dev devicon-jquery-plain" aria-hidden="true"></i>
+                    <p>jquery</p>
+                </li>
+                <li class="aos-init aos-animate" data-aos="fade" data-aos-delay="250">
+                    <i class="fab fa-sass" aria-hidden="true"></i>
+                    <p>sass</p>
+                </li>
+                <li class="aos-init aos-animate" data-aos="fade" data-aos-delay="300">
+                    <i class="fab fa-github-square" aria-hidden="true"></i>
+                    <p>GitHub</p>
+                </li>
+                <li class="aos-init aos-animate" data-aos="fade" data-aos-delay="350">
+                    <i class="fab fa-wordpress" aria-hidden="true"></i>
+                    <p>WordPress</p>
+                </li>
+                <li class="aos-init aos-animate" data-aos="fade" data-aos-delay="400">
+                    <i class="dev devicon-visualstudio-plain" aria-hidden="true"></i>
+                    <p>Visual Studio</p>
+                </li>
+                <li class="aos-init aos-animate" data-aos="fade" data-aos-delay="450">
+                    <i class="dev devicon-git-plain" aria-hidden="true"></i>
+                    <p>Git</p>
+                </li>
+                <li class="aos-init aos-animate" data-aos="fade" data-aos-delay="500">
+                    <i class="devicon-illustrator-plain" aria-hidden="true"></i>
+                    <p>Illustrator</p>
+                </li>
+                <li class="aos-init aos-animate" data-aos="fade" data-aos-delay="550">
+                    <i class="fab fa-php" aria-hidden="true"></i>
+                    <p>PHP</p>
+                </li>
+            </ul>
+    </section>
+    <main class="wrapper">
+        <section class="projects" id="projects">
+            <div class="wrapper">
+                <h2 class="projects__title">Projects</h2>
+            </div>
+            <div class="projects__container">
+                <div class="aos-init aos-animate" data-aos="fade" data-aos-delay="200">
+                    <div class="projects__layout">
+                        <div class="projects__img" data-aos="flip-up" data-aos-delay="400">
+                            <img src="./assets/project-thumbnails/portfolio-podcastCommuter.png"
+                                alt="project 6, desktop and mobile display for a podcast commuting app">
+                        </div>
+                        <div class="projects__content">
+                            <h3>Podcast Commuter</h3>
+                            <ul class="projects__skills">
+                                <li>ReactJS</li>
+                                <li>RESTful Apis</li>
+                                <li>Mob Programming</li>
+                                <li>SCSS</li>
+                                <li>HTML</li>
+                            </ul>
+                            <div>
+                                <p>This is a fully responsive React App that utilizes dual APIs to allow users to search
+                                    for a podcast with relevance to their commute time. A map is generated and shows
+                                    route travel times via walking or biking. Users then select a podcast and can listen
+                                    to it through the app and enjoy their commute! Created with <a
+                                        href="https://github.com/kentaylor92" target="_blank" class="projects__member-link">Ken
+                                        Taylor</a>, <a href="https://github.com/Aliceeeee825" target="_blank"
+                                        class="projects__member-link">Alice Song</a> and <a href="https://github.com/juliadufresne"
+                                        target="_blank" class="projects__member-link">Julia Dufresne</a>.</p>
+                            </div>
+                            <div>
+                                <a href="https://github.com/Project6-PodcastCommuter/Project6-PodcastCommuter"
+                                    class="projects__button" target="_blank">Github <i class="fab fa-github"></i></a>
+                                <a href="https://project6-podcastcommuter.github.io/Project6-PodcastCommuter/"
+                                    class="projects__button" target="_blank">Live <i
+                                        class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aos-init aos-animate" data-aos="fade" data-aos-delay="200">
+                    <div class="projects__layout projects__reverse">
+                        <div class="projects__img" data-aos="flip-up" data-aos-delay="400">
+                            <img src="./assets/project-thumbnails/portfolio-musicToEvent.png"
+                                alt="project 5, desktop and mobile display for a toronto events based on genre selection">
+                        </div>
+                        <div class="projects__content">
+                            <h3>Music T.O. Event</h3>
+                            <ul class="projects__skills2">
+                                <li>ReactJS</li>
+                                <li>RESTful Api</li>
+                                <li>SCSS</li>
+                                <li>HTML</li>
+                            </ul>
+                            <div>
+                                <p>A React app using an API, users can search for live concerts happening in Toronto
+                                    based on their genre preference. Results will display relevant information such as
+                                    the venue, time of the event, and the option to purchase the ticket.</p>
+                            </div>
+                            <div>
+                                <a href="https://github.com/btangsup/Music-TO-Event" class="projects__button"
+                                    target="_blank">Github <i class="fab fa-github"></i></a>
+                                <a href="https://btangsup.github.io/Music-TO-Event/" class="projects__button"
+                                    target="_blank">Live <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aos-init aos-animate" data-aos="fade" data-aos-delay="200">
+                    <div class="projects__layout">
+                        <div class="projects__img" data-aos="flip-up" data-aos-delay="400">
+                            <img src="./assets/project-thumbnails/portfolio-pho18.png"
+                                alt="personal work project of a desktop and mobile display for a pho vietnamese restaurant">
+                        </div>
+                        <div class="projects__content">
+                            <h3>Pho 18</h3>
+                            <ul class="projects__skills">
+                                <li>WordPress</li>
+                                <li>SCSS</li>
+                                <li>Javascript</li>
+                                <li>Client Work</li>
+                            </ul>
+                            <div>
+                                <p>A fully multi-page responsive website developed for Pho 18. Developed a custom
+                                    WordPress theme and implemented online ordering. Photography and pictures taken by
+                                    me.</p>
+                            </div>
+                            <div>
+                                <!-- <a href="https://github.com/btangsup/pho18" class="projects__button" target="_blank">Github <i class="fab fa-github" ></i></a> -->
+                                <a href="https://www.pho18fusion.com" class="projects__button" target="_blank">Live <i
+                                        class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aos-init aos-animate" data-aos="fade" data-aos-delay="200">
+                    <div class="projects__layout projects__reverse">
+                        <div class="projects__img" data-aos="flip-up" data-aos-delay="400">
+                            <img src="./assets/project-thumbnails/portfolio-flickist.png"
+                                alt="project 4, desktop and mobile display for a movie watchlist app">
+                        </div>
+                        <div class="projects__content">
+                            <h3>Flickist</h3>
+                            <ul class="projects__skills2">
+                                <li>Pair Programming</li>
+                                <li>RESTful Api</li>
+                                <li>Javascript</li>
+                                <li>SCSS</li>
+                                <li>HTML</li>
+                            </ul>
+                            <div>
+                                <p>This app uses a movie API that allows users to search for any film or t.v. show.
+                                    Users can add or remove their choices and create a personal watch list. Created with
+                                    <a href="https://github.com/Ania-M-Pienio" class="projects__member-link" target="_blank">Ania
+                                        Pienio</a>.</p>
+                            </div>
+                            <div>
+                                <a href="https://github.com/Project-4-Movie-Api-List-Creator/Project4MovieDb.github.io-Project4"
+                                    class="projects__button" target="_blank">Github <i class="fab fa-github"></i></a>
+                                <a href="http://www.btang.ca/Flickist/" class="projects__button" target="_blank">Live <i
+                                        class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aos-init aos-animate" data-aos="fade" data-aos-delay="200">
+                    <div class="projects__layout">
+                        <div class="projects__img" data-aos="flip-up" data-aos-delay="400">
+                            <img src="./assets/project-thumbnails/portfolio-cafealice.png"
+                                alt="project 3, desktop and mobile display for a childish gambino quiz">
+                        </div>
+                        <div class="projects__content">
+                            <h3>Cafe Alice</h3>
+                            <ul class="projects__skills">
+                                <li>WordPress</li>
+                                <li>SCSS</li>
+                                <li>Client Work</li>
+                                <li>Javascript</li>
+                            </ul>
+                            <div>
+                                <p>Developed a custom theme for WordPress and implemented contact forms and ACF for
+                                    client-side editing.</p>
+                            </div>
+                            <div>
+                                <a href="http://www.cafealice.ca" class="projects__button" target="_blank">Live <i
+                                        class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="contact" id="contact">
+        <div class="contact__container wrapper">
+            <h2 class="contact__title">Contact Me</h2>
+            <div class="contact__socials">
+                <ul>
+                    <li><a href="https://github.com/btangsup" target="_blank"><i class="fab fa-github-square"
+                                title="Github"></i></a></li>
+                    <li><a href="https://twitter.com/BTangsupp" target="_blank"><i class="fab fa-twitter-square"
+                                title="Twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/brandonerictang/" target="_blank"><i class="fab fa-linkedin"
+                                title="LinkedIn"></i></a></li>
+                </ul>
+            </div>
+            <form action="https://formspree.io/xvoqwkrr" class="contact__form aos-init aos-animate" data-aos="fade"
+                method="POST">
+                <div class="contact__input">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" name="name" placeholder="Your Name">
+                </div>
+                <div class="contact__input">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email" placeholder="Your Email">
+                </div>
+                <div class="contact__message">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Message" cols="30" rows="7"></textarea>
+                </div>
+                <button type="submit" class="contact__submit">Send message</button>
+            </form>
+            <div class="contact__tagline">
+                <p>You Can also reach me at:</p>
+                <a href="mailto:btangsup@gmail.com" target="_blank">btangsup@gmail.com</a>
+                <p>Thanks for visiting!</p>
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <p>Designed and Coded by Brandon Tang © 2020</p>
+    </footer>
+
+    <!-- jquery library-->
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'
+        integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
+    <!-- animate on scroll library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- sweet alert library -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- type js library -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>

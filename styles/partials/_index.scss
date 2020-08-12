@@ -1,0 +1,889 @@
+//GLOBAL STYLES //
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 2.5rem;
+    line-height: 3.3rem;
+    font-family: $body-font;
+    background-color: var(--portfolioSection);;
+    transition: all 0.5s;
+
+    @include mq-phone {
+        font-size: 2rem;
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-family: $heading-font;
+}
+
+h2 {
+    text-align: center;
+    font-size: 5rem;
+
+    @include mq-phone {
+        font-size: 3rem;
+    }
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 4rem;
+
+    @include mq-phone {
+        font-size: 2.6rem;
+    }
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.wrapper {
+    max-width: 1250px;
+    width: 85%;
+    margin: 0 auto;
+
+    @include mq-tablet {
+        width: 90%;
+    }
+
+    @include mq-phone {
+        width: 95%;
+    }
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+section {
+    padding: 50px 0;
+
+    @include mq-tablet {
+        padding: 25px 0;
+    }
+
+    @include mq-phone {
+        padding: 20px 0;
+    }
+}
+
+.scrollToTop{
+    position: fixed;
+    right: 2%;
+    bottom: 5%;
+    font-size: 3rem;
+    transition: 0.5s ease;
+	z-index: 999;
+	color: var(--primaryColor);
+	display: none;
+
+    &:hover {
+        transform: scale(1.3);
+    }
+
+    &:active {
+        color: $primary-color;
+    }
+}
+
+
+// NAVIGATION STYLES //
+
+.navigation {
+    position: fixed;
+    z-index: 10;
+    padding: 15px 0;
+    width: 100%;
+    background-color: var(--navBkgColor);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        text-decoration: none;
+        font-size: 4rem;
+        color: var(--navColor);
+    }
+
+    &__hamburger {
+        display: none;
+
+        @include mq-tablet {
+            width: 33px;
+            height: 33px;
+            right: 12spx;
+            padding: 5px;
+            display: block;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    &__hamburger span {
+        @include mq-tablet {
+            height: 2px;
+            width: 33px;
+            margin-bottom: 8px;
+            background-color: var(--toggle);
+            display: block;
+            position: relative;
+            right: 0;
+            transform: rotate(0deg);
+            transition: .7s ease;
+        }
+    }
+
+    @include mq-tablet {
+        &__hamburger.open span:nth-child(1) {
+            top: 10px;
+            transform: rotate(135deg);
+            transition: .7s ease;
+        }
+
+        &__hamburger.open span:nth-child(2) {
+            opacity: 0;
+            right: 100px;
+        }
+
+        &__hamburger.open span:nth-child(3) {
+            top: -10px;
+            transform: rotate(-135deg);
+            transition: .7s ease;
+        }
+    }
+
+    &__desktop {
+        @include mq-tablet {
+            display: none;
+        }
+    }
+
+    &__main {
+        display: flex;
+        list-style: none;
+        justify-content: flex-end;
+
+        @include mq-tablet {
+            @include flexCenter;
+            height: 100vh;
+            flex-direction: column;
+        }
+    }
+
+    &__main li {
+        @include mq-tablet {
+            padding: 40px 0;
+        }
+    }
+
+    &__main a {
+        text-decoration: none;
+        text-transform: capitalize;
+        padding: 5px 15px;
+        font-size: 2.5rem;
+        color: var(--navColor);
+        transition: 0.1s ease;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border-bottom: 2px solid var(--navColor);
+        }
+        
+        @include mq-tablet {
+            color: $tertiary-color;
+            font-size: 4rem;
+        }
+    }
+
+    &__toggle-theme-container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        color: var(--toggle);
+        padding: 0px 5px;
+    }
+
+    &__theme-toggle {
+        display: block;
+        position: relative;
+        width: 50px;
+        height: 25px;
+        border: solid 3px var(--toggle);
+        border-radius: 20px;
+        cursor: pointer;
+
+        &::after {
+            content: "";
+            border-radius: 35%;
+            background-color: var(--toggle);
+            width: 23px;
+            height: 20px;
+            position: absolute;
+            transition: all 0.3s ease;
+            left: calc(100% - 23px);
+            top: 0;
+        }
+    }
+}
+
+#navigation {
+    background: $primary-color;
+    color: $tertiary-color;
+    font-family: $heading-font;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+input[type="checkbox"] {
+    opacity: 0;
+    display: none; 
+}
+
+label.navigation__theme-toggle {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 25px;
+    border: solid 3px var(--toggle);
+    border-radius: 20px;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        border-radius: 35%;
+        background-color: var(--toggle);
+        width: 23px;
+        height: 20px;
+        position: absolute;
+        transition: all 0.3s ease;
+        left: calc(100% - 23px);
+        top: 0;
+    }
+}
+
+input.navigation__theme-toggle:checked + label.navigation__theme-toggle::after {
+    left: 0;
+}
+
+.hidden {
+    opacity: 0;
+    // transition-delay: .5s;
+    pointer-events: none;
+    cursor: default;
+}
+
+.visible {
+    opacity: 1;
+}
+
+// HEADER STYLES //
+
+header {
+    height: 100vh;
+    @include flexCenter;
+    flex-direction: column;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.lightHero {
+    background: url(../assets/lightHero.jpg);
+    height: 100vh;
+    @include flexCenter;
+    flex-direction: column;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.darkHero {
+    background: url(../assets/darkHero.jpg);
+    height: 100vh;
+    @include flexCenter;
+    flex-direction: column;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.lightHero,
+.darkHero {
+
+    @include mq-tablet {
+        height: 90vh;
+        background-position: 44% 50%;
+
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 150px;
+
+    @include mq-tablet {
+        padding-top: 100px;
+    }
+
+    &__title {
+        font-size: 8rem;
+        text-transform: uppercase;
+        color: var(--secondaryColor);
+
+        @include mq-tablet {
+            font-size: 6rem;
+        }
+
+        @include mq-phone {
+            font-size: 3.5rem;
+        }
+    }
+
+    &__resume-button {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 2rem;
+        padding: 18px 30px;
+        background-color: var(--toggle);
+        color: var(--navBkgColor);
+        margin-top: 25px;
+        transition: 0.7s ease;
+        display: inline-block;
+
+        &:hover,
+        &:active,
+        &:focus {
+            border-radius: 30px;
+            transform: scale(1.1);
+        }
+
+        @include mq-phone {
+            padding: 10px 20px;
+        }
+    }
+
+    &__social ul {
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+    }
+
+    &__social li {
+        list-style-type: none;
+    }
+
+    &__social a {
+        padding: 15px;
+    }
+
+    &__social i {
+        font-size: 6rem;
+        color: var(--toggle);
+        transition: 0.3s ease;
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active,
+        &:focus {
+            border: 3px solid var(--toggle);
+        }
+
+        @include mq-tablet {
+            font-size: 5rem;
+        }
+    }
+
+    &__arrow-down {
+        color: var(--toggle);
+        font-size: 6rem;
+        position: absolute;
+        bottom: 0;
+        animation: downArrow 1s linear infinite alternate;
+        &:hover,
+        &:active,
+        &:focus {
+            color: var(--toggle);
+        }
+
+        @include mq-tablet {
+            font-size: 4rem;
+        }
+    }
+}
+
+@keyframes downArrow {
+    0% {bottom: 0px; opacity: 0.8 }
+    100% {bottom: 35px; opacity: 1 }
+}
+
+// ABOUT STYLES // 
+.about {
+    background-color: $secondary-color;
+
+    &__title {
+        width: 300px;
+        margin: 0 auto;
+        border-bottom: 2px solid $quad-color;
+        padding-bottom: 30px;
+        color: $tertiary-color;
+        padding-bottom: 10px;
+        position: relative;
+        margin-bottom: 30px;
+
+        @include mq-phone {
+            width: 200px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__title::after {
+        display: block;
+        margin: 0 auto;
+        width: 30px;
+        border-bottom: 4px solid $quad-color;
+        position: absolute;
+        left: 5px;
+        right: 5px;
+        bottom: -3px
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        font-size: 2rem;
+
+        @include mq-tablet {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__headshot-container {
+        width: 30%;
+
+        @include mq-tablet {
+            width: 50%;
+        }
+
+        @include mq-phone {
+            width: 65%;
+        }
+    }
+
+    &__headshot {
+        box-shadow: 20px 20px $primary-color;
+    }
+
+    &__string-typing-container {
+        text-transform: uppercase;
+        border: 3px solid $tertiary-color;
+        display: block;
+        width: 450px;
+        padding: 10px;
+        margin: 0 0 20px 0;
+        color: $tertiary-color;
+
+        @include mq-tablet {
+            margin: 30px auto;
+        }
+
+        @include mq-phone {
+            width: 275px;
+        }
+    }
+
+    &__string-typing {
+        display: inline;
+        color: $tertiary-color;
+    }
+
+    &__highlight {
+        color: $quad-color;
+        font-weight: bold;
+    }
+
+    &__text {
+        color: $tertiary-color;
+        width: 65%;
+
+        @include mq-tablet {
+            width: 85%;
+        }
+
+        @include mq-phone {
+            width: 95%;
+        }
+    }
+
+    &__text p:not(:first-of-type) {
+        padding-top: 15px;
+    }
+
+    &__konami {
+        @include mq-tablet {
+            display: none;
+        }
+    }
+
+}
+
+.polar {
+    border-radius: 50px;
+}
+
+// SKILLS STYLES //
+
+.skills {
+    background-color: var(--buttonColor);
+
+    &__title {
+        width: 300px;
+        color: var(--primaryColor);
+        margin: 0 auto;
+        border-bottom: 2px solid $quad-color;
+        padding-bottom: 30px;
+        padding-bottom: 10px;
+        position: relative;
+        margin-bottom: 30px;
+
+            @include mq-phone {
+            width: 200px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-flow: row wrap;
+        list-style: none;
+        max-width: 750px;
+        margin: 0 auto;
+
+        @include mq-phone {
+            max-width: 100%;
+        }
+    }
+
+    &__list li {
+        color: var(--tertiaryColor);
+        width: 16%;
+        padding: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2.0rem;
+
+        @include mq-phone {
+            width: 50%;
+        }
+    }
+
+    &__list i {
+        font-size: 5rem;
+    }
+
+}
+
+
+// PROJECTS STYLES //
+
+.projects h2,
+.projects h3 {
+    color: var(--primaryColor);
+}
+
+.projects {
+
+    &__title {
+        width: 300px;
+        color: var(--primaryColor);
+        margin: 0 auto;
+        border-bottom: 2px solid $quad-color;
+        padding-bottom: 30px;
+        padding-bottom: 10px;
+        position: relative;
+        margin-bottom: 30px;
+
+            @include mq-phone {
+            width: 200px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__layout {
+        display: flex;
+
+        @include mq-tablet {
+            flex-direction: column;
+            align-items: center;
+            padding: 0px 0px 25px 0;
+        }
+    }
+
+    &__Layout:nth-of-type(even) {
+        flex-direction: row-reverse;
+    }
+
+    &__img {
+        width: 50%;
+
+        @include mq-small-tablet {
+            width: 100%;
+        }
+    }
+
+    &__content {
+        width: 50%;
+        padding: 60px 0 0 10px;
+        font-size: 2rem;
+
+        @include mq-tablet {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.6rem;
+        }
+    }
+
+    &__content a {
+        color: var(--tertiaryColor);
+    }
+
+    &__content p {
+        padding: 15px 0px;
+        color: var(--fontColor);
+    }
+
+    &__skills,
+    &__skills2 {
+        display: flex;
+        flex-flow: row wrap;
+        list-style: none;
+
+        @include mq-tablet {
+            justify-content: center;
+        }
+
+        @include mq-phone {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__skills2 {
+        justify-content: flex-end;
+
+        @include mq-tablet {
+            justify-content: center;
+        }
+    }
+
+    &__reverse {
+        flex-direction: row-reverse;
+        text-align: right;
+
+        @include mq-tablet {
+            flex-direction: column;
+            align-items: center;
+            padding: 0px 0px 25px 0;
+        }
+
+        @include mq-phone {
+            padding: 0px 0px 15px 0;
+        }
+    }
+
+    &__skills li,
+    &__skills2 li {
+        border-right: 1px solid var(--primaryColor);
+        color: var(--primaryColor);
+        padding: 10px;
+        margin: 10px 5px 0 0;
+    }
+
+    &__button {
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 2px solid $secondary-color;
+        color: $secondary-color;
+        display: inline-block;
+        transition: 0.3s ease;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $secondary-color;
+            color: $tertiary-color;
+        }
+
+        @include mq-phone {
+            padding: 8px 20px;
+        }
+    }
+}
+
+// CONTACT STYLES // 
+
+.contact {
+    background-color: $secondary-color;
+    color: $tertiary-color;
+
+    &__title {
+        width: 300px;
+        margin: 0 auto;
+        border-bottom: 2px solid $quad-color;
+        padding-bottom: 30px;
+        color: $tertiary-color;
+        padding-bottom: 10px;
+        position: relative;
+        margin-bottom: 30px;
+
+            @include mq-phone {
+            width: 200px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__socials ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__socials li {
+        padding: 15px;
+    }
+
+    &__socials i {
+        font-size: 5rem;
+        color: $tertiary-color;
+        transition: 0.7s ease;
+
+        &:hover,
+        &:active,
+        &:focus {
+            transform: scale(1.2);
+        }
+    }
+
+    &__form,
+    &__message,
+    &__input {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form {
+        width: 60%;
+        background-color: $tertiary-color;
+        margin: 30px auto;
+        padding: 20px 40px 40px 40px;
+
+        @include mq-tablet {
+            width: 85%;
+            margin: 15px auto;
+        }
+
+        @include mq-phone {
+            width: 100%;
+        }
+    }
+
+    &__form label {
+        color: $secondary-color;
+        text-transform: uppercase;
+    }
+
+    &__form input,
+    &__form textarea {
+        padding: 5px 10px;
+        border-radius: 10px;
+        outline: none;
+        font-weight: 500px;
+        margin-bottom: 5px;
+        border: 3px solid transparent;
+        box-shadow: 4px 4px transparent;
+        transition: 0.3s all ease;
+
+        &:active,
+        &:focus {
+            box-shadow: 4px 4px var(--secondaryColor);
+            border: 3px solid var(--secondaryColor);
+        }
+    }
+
+    &__submit {
+        text-transform: uppercase;
+        display: inline-block;
+        border: none;
+        color: $tertiary-color;
+        background-color: $secondary-color;
+        transition: 0.1s ease;
+        margin-top: 30px;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $primary-color;
+        }
+    }
+
+    &__tagline {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__tagline a {
+        text-decoration: none;
+        text-transform: lowercase;
+        color: $quad-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+footer {
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+
+    @include mq-phone {
+        font-size: 1.6rem;
+    }
+}
